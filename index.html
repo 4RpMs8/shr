@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مشخصات فردی سید محمد شایان رضوی</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f4f4f4;
-            background-image: url('copilot_image_1737312956624.jpeg'); 
+            background-image: url('copilot_image_1737312956624.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -110,11 +111,77 @@
             border: 2px solid #e65100;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        .sidebar {
+            position: fixed;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            background-color: #333;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-bottom: 1px solid #444;
+            text-align: center;
+        }
+        .sidebar a:hover {
+            background-color: #555;
+        }
+        .menu {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }.menu .fas {
+            font-size: 18px;
+        }
+        .menu-content {
+            display: none;
+            position: fixed;
+            top: 40px;
+            right: 10px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .menu-content a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+        .menu-content a:hover {
+            background-color: #f4f4f4;
+        }
     </style>
 </head>
 <body>
+    <div class="sidebar">
+        <a href="#"><i class="fas fa-sign-in-alt"></i> ورود</a>
+        <a href="#"><i class="fas fa-sign-out-alt"></i> خروج</a>
+        <a href="#"><i class="fas fa-user-plus"></i> ثبت‌نام</a>
+        <a href="#"><i class="fas fa-user"></i> پروفایل</a>
+    </div>
+    <div class="menu" onclick="toggleMenu()">
+        <i class="fas fa-ellipsis-v"></i>
+    </div>
+    <div class="menu-content" id="menu-content">
+        <a href="#">تنظیمات</a>
+        <a href="#">راهنما</a>
+        <a href="#">درباره</a>
+    </div>
     <div class="container">
-        <img src="copilot_image_1737368182859.jpeg" alt="تصویر هدر" class="header-img"> <!-- نام فایل تصویر هدر -->
+        <img src="copilot_image_1737368182859.jpeg" alt="تصویر هدر" class="header-img">
         <h1>مشخصات فردی سید محمد شایان رضوی</h1>
         <h2 onclick="toggleSection('personal-info')">اطلاعات شخصی</h2>
         <ul id="personal-info">
@@ -132,7 +199,7 @@
         <ul id="skills">
             <li>برنامه‌نویسی با زبان‌های Python, C و C++</li>
             <li>توسعه وب با HTML, CSS و JavaScript</li>
-            <li>تحلیل داده‌هاو ماشین لرنینگ</li>
+            <li>تحلیل داده‌ها و ماشین لرنینگ</li>
         </ul>
         <h2 onclick="toggleSection('education')">تحصیلات</h2>
         <ul id="education">
@@ -154,39 +221,4 @@
         </div>
         <h2 onclick="toggleSection('testimonials')">نظرات مشتریان</h2>
         <div id="testimonials" class="testimonials">
-            <div class="testimonial">
-                <p>"سید محمد شایان رضوی یکی از بهترین توسعه‌دهندگان وب است که تا به حال با او کار کرده‌ایم. کارهایش همیشه با دقت و کیفیت بالا انجام می‌شود."</p>
-                <div class="author">- شرکت ABC</div>
-            </div>
-            <div class="testimonial">
-                <p>"تجربیات و دانش سید محمد شایان رضوی در تحلیل داده‌ها بسیار مفید و تاثیرگذار بوده است. نتایج کارهای او همیشه قابل اعتماد و دقیق است."</p>
-                <div class="author">- شرکت XYZ</div>
-            </div>
-        </div>
-        <h2 onclick="toggleSection('contact')">اطلاعات تماس</h2>
-        <ul id="contact">
-            <li><strong>ایمیل:</strong> shayan84razavi@gmail.com</li>
-            <li><strong>تلفن:</strong> 09023477894</li>
-        </ul>
-        <h2 onclick="toggleSection('gallery')">گالری تصاویر</h2>
-        <div id="gallery" class="gallery">
-            <img src="capture_3342851482820762363.jpg" alt="عکس سید محمد شایان رضوی" class="profile-pic"> <!-- نام فایل تصویر پروفایل -->
-            <img src="image1.jpg" alt="عکس ۱">
-            <img src="image2.jpg" alt="عکس ۲">
-            <img src="image3.jpg" alt="عکس ۳">
-            <img src="image4.jpg" alt="عکس ۴">
-            <img src="image5.jpg" alt="عکس ۵">
-        </div>
-    </div>
-    <script>
-        function toggleSection(sectionId) {
-            var section = document.getElementById(sectionId);
-            if (section.style.display === 'none' || section.style.display === '') {
-                section.style.display = 'block';
-            } else {
-                section.style.display = 'none';
-            }
-        }
-    </script>
-</body>
-</html>
+            <div[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/LucaRiccio/laravel-primi-passi/tree/fb91862950a6e5bc5fb011d4a5084dbeb32dfecd/resources/views/layout/app.blade.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "1")[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/RafaelLiWu/Sistema_Login/tree/a039b8f786b2e87cef77330950ef3046f2e02c5c/index.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "2")>
