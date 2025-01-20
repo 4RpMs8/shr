@@ -9,6 +9,10 @@
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f4f4f4;
+            background-image: url('https://via.placeholder.com/1920x1080?text=Background+Image');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: #333;
             margin: 0;
             padding: 0;
@@ -17,7 +21,7 @@
             max-width: 800px;
             margin: 30px auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
@@ -90,6 +94,14 @@
             font-weight: bold;
             color: #2c3e50;
         }
+        .profile-pic {
+            display: block;
+            max-width: 200px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            border: 2px solid #e65100;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -149,6 +161,7 @@
         </ul>
         <h2 onclick="toggleSection('gallery')">گالری تصاویر</h2>
         <div id="gallery" class="gallery">
+            <img src="https://via.placeholder.com/200x200?text=Profile+Image" alt="عکس سید محمد شایان رضوی" class="profile-pic">
             <img src="image1.jpg" alt="عکس ۱">
             <img src="image2.jpg" alt="عکس ۲">
             <img src="image3.jpg" alt="عکس ۳">
