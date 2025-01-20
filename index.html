@@ -31,10 +31,12 @@
             border-bottom: 2px solid #16a085;
             padding-bottom: 5px;
             margin-top: 30px;
+            cursor: pointer;
         }
         ul {
             list-style: none;
             padding: 0;
+            display: none;
         }
         ul li {
             margin-bottom: 10px;
@@ -56,39 +58,97 @@
         .gallery img:hover {
             transform: scale(1.05);
         }
+        .experience {
+            margin-top: 30px;
+            display: none;
+        }
+        .experience .job {
+            margin-bottom: 20px;
+        }
+        .experience .job h3 {
+            margin-bottom: 5px;
+        }
+        .experience .job p {
+            margin: 0;
+        }
+        .testimonials {
+            margin-top: 30px;
+            display: none;
+        }
+        .testimonial {
+            background-color: #eafaf1;
+            border-left: 5px solid #16a085;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .testimonial p {
+            margin: 0;
+        }
+        .testimonial .author {
+            text-align: right;
+            font-weight: bold;
+            color: #2c3e50;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>مشخصات فردی سید محمد شایان رضوی</h1>
-        <h2>اطلاعات شخصی</h2>
-        <ul>
+        <h2 onclick="toggleSection('personal-info')">اطلاعات شخصی</h2>
+        <ul id="personal-info">
             <li><strong>نام:</strong> سید محمد شایان رضوی</li>
             <li><strong>سن:</strong> 19 سال</li>
             <li><strong>تحصیلات:</strong> دانشجوی رشته کامپیوتر در دانشگاه اصفهان</li>
         </ul>
-        <h2>علایق</h2>
-        <ul>
+        <h2 onclick="toggleSection('interests')">علایق</h2>
+        <ul id="interests">
             <li>شعر</li>
             <li>داستان نویسی</li>
             <li>نقاشی و کاریکاتور</li>
         </ul>
-        <h2>مهارت‌ها</h2>
-        <ul>
+        <h2 onclick="toggleSection('skills')">مهارت‌ها</h2>
+        <ul id="skills">
             <li>برنامه‌نویسی با زبان‌های Python, C و C++</li>
+            <li>توسعه وب با HTML, CSS و JavaScript</li>
+            <li>تحلیل داده‌ها و ماشین لرنینگ</li>
         </ul>
-        <h2>تحصیلات</h2>
-        <ul>
+        <h2 onclick="toggleSection('education')">تحصیلات</h2>
+        <ul id="education">
             <li><strong>دیپلم:</strong> از دبیرستان XYZ</li>
             <li><strong>دانشگاه:</strong> رشته کامپیوتر در دانشگاه اصفهان</li>
         </ul>
-        <h2>اطلاعات تماس</h2>
-        <ul>
+        <h2 onclick="toggleSection('experience')">تجربیات کاری</h2>
+        <div id="experience" class="experience">
+            <div class="job">
+                <h3>توسعه‌دهنده وب در شرکت ABC</h3>
+                <p><strong>مدت:</strong> ۱۳۹۸ تا ۱۴۰۰</p>
+                <p><strong>توضیحات:</strong> مسئولیت توسعه و بهبود وبسایت‌های مشتریان با استفاده از HTML, CSS و JavaScript.</p>
+            </div>
+            <div class="job">
+                <h3>تحلیل‌گر داده در شرکت XYZ</h3>
+                <p><strong>مدت:</strong> ۱۴۰۰ تا کنون</p>
+                <p><strong>توضیحات:</strong> تحلیل داده‌های مشتریان و ارائه گزارش‌های تحلیلی با استفاده از Python و ابزارهای ماشین لرنینگ.</p>
+            </div>
+        </div>
+        <h2 onclick="toggleSection('testimonials')">نظرات مشتریان</h2>
+        <div id="testimonials" class="testimonials">
+            <div class="testimonial">
+                <p>"سید محمد شایان رضوی یکی از بهترین توسعه‌دهندگان وب است که تا به حال با او کار کرده‌ایم. کارهایش همیشه با دقت و کیفیت بالا انجام می‌شود."</p>
+                <div class="author">- شرکت ABC</div>
+            </div>
+            <div class="testimonial">
+                <p>"تجربیات و دانش سید محمد شایان رضوی در تحلیل داده‌ها بسیار مفید و تاثیرگذار بوده است. نتایج کارهای او همیشه قابل اعتماد و دقیق است."</p>
+                <div class="author">- شرکت XYZ</div>
+            </div>
+        </div>
+        <h2 onclick="toggleSection('contact')">اطلاعات تماس</h2>
+        <ul id="contact">
             <li><strong>ایمیل:</strong> shayan84razavi@gmail.com</li>
             <li><strong>تلفن:</strong> 09023477894</li>
         </ul>
-        <h2>گالری تصاویر</h2>
-        <div class="gallery">
+        <h2 onclick="toggleSection('gallery')">گالری تصاویر</h2>
+        <div id="gallery" class="gallery">
             <img src="image1.jpg" alt="عکس ۱">
             <img src="image2.jpg" alt="عکس ۲">
             <img src="image3.jpg" alt="عکس ۳">
@@ -96,5 +156,15 @@
             <img src="image5.jpg" alt="عکس ۵">
         </div>
     </div>
+    <script>
+        function toggleSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section.style.display === 'none' || section.style.display === '') {
+                section.style.display = 'block';
+            } else {
+                section.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
