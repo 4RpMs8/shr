@@ -9,7 +9,7 @@
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f4f4f4;
-            background-image: url('copilot_image_1737312956624.jpeg'); /* نام فایل تصویر پس‌زمینه */
+            background-image: url('copilot_image_1737312956624.jpeg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -23,6 +23,14 @@
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.8);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .header-img {
+            display: block;
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            margin-bottom: 20px;
             border-radius: 8px;
         }
         h1 {
@@ -106,6 +114,7 @@
 </head>
 <body>
     <div class="container">
+        <img src="copilot_image_1737312956624.jpeg" alt="تصویر هدر" class="header-img"> <!-- نام فایل تصویر هدر -->
         <h1>مشخصات فردی سید محمد شایان رضوی</h1>
         <h2 onclick="toggleSection('personal-info')">اطلاعات شخصی</h2>
         <ul id="personal-info">
@@ -123,7 +132,7 @@
         <ul id="skills">
             <li>برنامه‌نویسی با زبان‌های Python, C و C++</li>
             <li>توسعه وب با HTML, CSS و JavaScript</li>
-            <li>تحلیل داده‌ها و ماشین لرنینگ</li>
+            <li>تحلیل داده‌هاو ماشین لرنینگ</li>
         </ul>
         <h2 onclick="toggleSection('education')">تحصیلات</h2>
         <ul id="education">
@@ -161,7 +170,7 @@
         </ul>
         <h2 onclick="toggleSection('gallery')">گالری تصاویر</h2>
         <div id="gallery" class="gallery">
-            <img src="profile.jpg" alt="عکس سید محمد شایان رضوی" class="profile-pic"> <!-- نام فایل تصویر پروفایل -->
+            <img src="capture_3342851482820762363.jpg" alt="عکس سید محمد شایان رضوی" class="profile-pic"> <!-- نام فایل تصویر پروفایل -->
             <img src="image1.jpg" alt="عکس ۱">
             <img src="image2.jpg" alt="عکس ۲">
             <img src="image3.jpg" alt="عکس ۳">
