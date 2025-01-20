@@ -141,8 +141,11 @@
             padding: 5px 10px;
             border-radius: 5px;
             cursor: pointer;
-        }.menu .fas {
+            transition: transform 0.3s ease-in-out;
+        }
+        .menu .fas {
             font-size: 18px;
+            animation: rotate 1s infinite linear;
         }
         .menu-content {
             display: none;
@@ -163,37 +166,21 @@
         .menu-content a:hover {
             background-color: #f4f4f4;
         }
-        .game {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+        .games {
             text-align: center;
+            margin-top: 20px;
         }
-        .game input[type="number"] {
-            padding: 10px;
-            width: 100px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-        .game button {
+        .games a {
+            display: inline-block;
             padding: 10px 20px;
             background-color: #16a085;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 5px;
         }
-        .game button:hover {
+        .games a:hover {
             background-color: #149174;
-        }
-        .game #result {
-            margin-top: 20px;
-            font-size: 18px;
         }
     </style>
 </head>
@@ -239,13 +226,13 @@
             <li><strong>دانشگاه:</strong> رشته کامپیوتر در دانشگاه اصفهان</li>
         </ul>
         <h2 onclick="toggleSection('experience')">تجربیات کاری</h2>
-        <div[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/LucaRiccio/laravel-primi-passi/tree/fb91862950a6e5bc5fb011d4a5084dbeb32dfecd/resources/views/layout/app.blade.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "1")[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/RafaelLiWu/Sistema_Login/tree/a039b8f786b2e87cef77330950ef3046f2e02c5c/index.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "2")
-            <div id="experience" class="experience">
+        <div id="experience" class="experience">
             <div class="job">
                 <h3>توسعه‌دهنده وب در شرکت ABC</h3>
                 <p><strong>مدت:</strong> ۱۳۹۸ تا ۱۴۰۰</p>
                 <p><strong>توضیحات:</strong> مسئولیت توسعه و بهبود وبسایت‌های مشتریان با استفاده از HTML, CSS و JavaScript.</p>
             </div>
+           [43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/LucaRiccio/laravel-primi-passi/tree/fb91862950a6e5bc5fb011d4a5084dbeb32dfecd/resources/views/layout/app.blade.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "1")[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/RafaelLiWu/Sistema_Login/tree/a039b8f786b2e87cef77330950ef3046f2e02c5c/index.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "2")
             <div class="job">
                 <h3>تحلیل‌گر داده در شرکت XYZ</h3>
                 <p><strong>مدت:</strong> ۱۴۰۰ تا کنون</p>
@@ -277,13 +264,8 @@
             <img src="image4.jpg" alt="عکس ۴">
             <img src="image5.jpg" alt="عکس ۵">
         </div>
-        <h2 onclick="toggleSection('game')">بازی حدس عدد</h2>
-        <div id="game" class="game">
-            <h2>بازی حدس عدد</h2>
-            <p>یک عدد بین ۱ تا ۱۰۰ حدس بزنید:</p>
-            <input type="number" id="guess" min="1" max="100">
-            <button onclick="checkGuess()">حدس بزن</button>
-            <p id="result"></p>
+        <div class="games">
+            <a href="tic-tac-toe.html">بازی تیک تاک تو</a>
         </div>
     </div>
     <script>
@@ -303,20 +285,6 @@
             } else {
                 menuContent.style.display = 'none';
             }
-        }
-
-        var randomNumber = Math.floor(Math.random() * 100) + 1;
-        function checkGuess() {
-            var userGuess = parseInt(document.getElementById('guess').value);
-            var result = '';
-            if (userGuess < randomNumber) {
-                result = 'عدد مخفی بزرگتر است!';
-            } else if (userGuess > randomNumber) {
-                result = 'عدد مخفی کوچکتر است!';
-            } else {
-                result = 'تبریک! شما عدد مخفی را درست حدس زدید!';
-            }
-            document.getElementById('result').innerText = result;
         }
     </script>
 </body>
